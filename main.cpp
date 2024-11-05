@@ -27,7 +27,8 @@ void YourFailureFunction() {
 int main(int argc, char* argv[]) 
 {
     google::InstallPrefixFormatter(&MyPrefixFormatter);
-    google::InstallFailureFunction(&YourFailureFunction);
+    //google::InstallFailureFunction(&YourFailureFunction);
+    google::InstallFailureSignalHandler();
     google::InitGoogleLogging(argv[0]);
     
     //FLAGS_logtostderr = 1;        //GLOG_logtostderr=1 ./your_application
